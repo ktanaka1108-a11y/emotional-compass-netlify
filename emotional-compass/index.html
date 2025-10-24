@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Emotional Compass</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@500&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    }
+    html[lang="ja"] body {
+      font-family: 'Noto Sans JP', 'Inter', sans-serif;
+    }
+    .font-serif {
+      font-family: 'Playfair Display', 'Noto Serif JP', serif;
+    }
+    html[lang="ja"] .font-serif {
+      font-family: 'Noto Serif JP', 'Playfair Display', serif;
+    }
+  </style>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'Noto Sans JP', 'sans-serif'],
+            serif: ['Playfair Display', 'Noto Serif JP', 'serif'],
+          },
+          colors: {
+            'ivory': '#FAF8F2',
+            'blush': '#F2E9E4',
+            'beige': '#E6D9D1',
+            'pale-blue': '#D1DDE6',
+            'stone': '#4A4A4A',
+            'soft-stone': '#6B6B6B',
+          },
+          keyframes: {
+            breathe: {
+              '0%, 100%': { transform: 'scale(0.8)', opacity: '0.7' },
+              '50%': { transform: 'scale(1)', opacity: '1' },
+            },
+            fadeIn: {
+                '0%': { opacity: '0', transform: 'translateY(10px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            fadeOut: {
+                '0%': { opacity: '1', transform: 'translateY(0)' },
+                '100%': { opacity: '0', transform: 'translateY(-10px)' },
+            }
+          },
+          animation: {
+            breathe: 'breathe 10s ease-in-out infinite',
+            'fade-in': 'fadeIn 0.7s ease-out forwards',
+            'fade-out': 'fadeOut 0.5s ease-in forwards',
+          }
+        },
+      },
+    }
+  </script>
+<script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.27.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
